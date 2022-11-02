@@ -1,0 +1,134 @@
+.seeMoreWrp {
+  position: relative;
+}
+
+.seeMore {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 286px;
+  max-height: 44px;
+  background: #000000;
+  border-radius: 22px;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 0 10px;
+  padding: 13px 21px 27px 21px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: width 0.5s ease-in-out, max-height 0.5s ease-in-out;
+
+
+  &_open {
+    width: 327px;
+    max-height: 350px;
+    border-radius: 22px;
+  }
+
+  &__el {
+    max-height: fit-content;
+    display: flex;
+    gap: 0 5px;
+    justify-content: flex-start;
+
+    &_contentRight {
+      justify-content: flex-end;
+    }
+  }
+
+  &__category {
+
+  }
+
+  &__arrowWrp {
+    display: inline-block;
+    max-height: fit-content;
+    transition: transform 0.5s ease-in-out;
+    transform: rotate3d(1, 0, 0, 0deg);
+  }
+
+  &__currentAuthor {
+    position: absolute;
+    left: 130px;
+    min-width: fit-content;
+    overflow: hidden;
+    transition: opacity 0.5s ease-in-out;
+
+    display: flex;
+    gap: 0 10px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 15px;
+      height: 100%;
+      background: linear-gradient(90deg, #000000 41.59%, rgba(245, 245, 247, 0) 93.56%);
+      z-index: 2;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 66px;
+      width: 130px;
+      height: 20px;
+      background: linear-gradient(270deg, #000000 41.59%, rgba(245, 245, 247, 0) 93.56%);
+      z-index: 2;
+    }
+
+    & span {
+      display: inline-block;
+      position: relative;
+      //left: 0;
+      white-space: nowrap;
+
+      //animation: 10s see-more-text-animation infinite cubic-bezier(0.31, 0.3, 0.68, 0.67);
+      animation: 5s see-more-text-animation infinite linear;
+    }
+  }
+
+  &__linkWrp {
+    width: 165px;
+    padding: 15px 10px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 7px 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+    & a {
+      white-space: pre-line;
+    }
+  }
+}
+
+@keyframes see-more-text-animation {
+  from {
+    transform: translateX(60%);
+    //left: 60%;
+  }
+
+  to {
+    transform: translateX(-100%);
+
+  }
+}
+
+@keyframes see-more-text-animation2 {
+  from {
+    transform: translateX(60%);
+    //left: 60%;
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
