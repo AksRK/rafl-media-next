@@ -1,3 +1,4 @@
+@import "mixins";
 
 .sun-editor-editable {
   background: #FAFAFA;
@@ -59,6 +60,12 @@
     //  top: 0;
     //  left: 0;
     //}
+  }
+}
+
+@media (max-width: 966px) {
+  .se-tooltip-inner {
+    display: none !important;
   }
 }
 

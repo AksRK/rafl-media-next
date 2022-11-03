@@ -1,5 +1,4 @@
 import styles from './styles.module.scss'
-import Link from 'next/link'
 import Card from "../Card";
 import tstImg from "../../public/tstImg.jpg";
 

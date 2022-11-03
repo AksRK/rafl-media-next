@@ -1,7 +1,7 @@
-import "suneditor/dist/css/suneditor.min.css";
-// import '../styles/sun-editor.scss'
-// import '../styles/suneditor.min.css'
-import '../styles/globals.scss'
+// import "suneditor/dist/css/suneditor.min.css";
+import '../core/styles/suneditor.min.css'
+import '../core/styles/globals.scss'
+import '../core/styles/sun-editor.scss'
 
 
 

@@ -1,4 +1,4 @@
-import styles from '../styles/user-license-agreement.module.scss'
+import styles from '../core/styles/user-license-agreement.module.scss'
 import DefaultLayout from "../layouts/DefaultLayout";
 import { useRouter } from 'next/router'
 import Link from 'next/link'

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '../core/styles/Home.module.css'
 import DefaultLayout from "../layouts/DefaultLayout";
 import { useRouter } from 'next/router'
 import MyMain from "../components/MyMain";

@@ -1,5 +1,5 @@
 import styles from './styles.module.scss'
-import useWindowSize from "../../hooks/useWindowSize";
+import useWindowSize from "../../core/hooks/useWindowSize";
 import Link from 'next/link'
 import Image from 'next/image'
 

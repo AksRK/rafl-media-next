@@ -1,13 +1,12 @@
-import styles from '../../styles/creator-info-page.module.scss'
+import styles from '../../core/styles/creator-info-page.module.scss'
 import HomeLayout from "../../layouts/HomeLayout";
 import MyMain from "../../components/MyMain";
 import DefaultLayout from "../../layouts/DefaultLayout";
-import Card from "../../components/Card";
 import tstImg from "../../public/tstImg.jpg";
 import SocialLink from "../../components/UI/SocialLink";
 import Image from 'next/image'
 import Link from 'next/link'
-import useWindowSize from "../../hooks/useWindowSize";
+import useWindowSize from "../../core/hooks/useWindowSize";
 import CardsList from "../../components/CardsList";
 
 export default function CreatorPage() {

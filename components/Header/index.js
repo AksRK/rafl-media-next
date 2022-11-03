@@ -1,7 +1,7 @@
 import styles from './styles.module.scss'
 import {useState} from "react";
 import Link from 'next/link'
-import useWindowSize from "../../hooks/useWindowSize";
+import useWindowSize from "../../core/hooks/useWindowSize";
 import SocialLink from "../UI/SocialLink";
 import NavLink from "../UI/NavLink";
 import { useRouter } from 'next/router'
@@ -61,8 +61,8 @@ function Header() {
                 </div>
             </div>
             {
-                mobile >= size.width?
-                    <>
+                mobile >= size.width
+                    ? <>
                         <button onClick={()=> setBurgerState(!burgerState)}
                                 className={styles.burgerButton}
                                 style={burgerState?{background:'#000000', color:'#ffffff'}:{}}>
@@ -87,7 +87,6 @@ function Header() {
                             </div>
                         </div>
                     </>
-
                     :headerNavBar()
             }
 

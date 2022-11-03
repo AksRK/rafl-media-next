@@ -1,4 +1,4 @@
-import styles from '../../styles/admin-auth.module.scss'
+import styles from '../../core/styles/admin-auth.module.scss'
 import {useForm} from 'react-hook-form';
 import {useState} from "react";
 

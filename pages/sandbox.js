@@ -1,4 +1,4 @@
-import styles from '../styles/sandbox.module.scss'
+import styles from '../core/styles/sandbox.module.scss'
 import {useState} from "react";
 
 export default function Sandbox() {

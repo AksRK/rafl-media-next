@@ -1,8 +1,8 @@
-import styles from '../styles/about-project.module.scss'
-import DefaultLayout from "../layouts/DefaultLayout";
-import { useRouter } from 'next/router'
-import MyMain from "../components/MyMain";
-import SocialLink from "../components/UI/SocialLink";
+import styles from './index.module.scss'
+import {useRouter} from 'next/router'
+import MyMain from "../../components/MyMain";
+import SocialLink from "../../components/UI/SocialLink";
+import DefaultLayout from "../../layouts/DefaultLayout";
 
 export default function AboutProject() {
     const {asPath} = useRouter()

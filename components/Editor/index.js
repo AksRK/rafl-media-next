@@ -19,7 +19,7 @@ export default function Editor({ name, onChange, props, contTst }) {
         "videoResizing": false,
         "videoFileInput": false,
         // toolbarWidth:'balloon',
-        mode:'inline',
+        // mode:'inline',
         buttonList: [
             [
                 'undo',

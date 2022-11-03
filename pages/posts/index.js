@@ -3,14 +3,13 @@ import ShrinkText from "../../components/UI/ShrinkText/ShrinkText";
 import tstImg from '../../public/tstImg.jpg'
 import hand from '../../public/hand-black.svg'
 import SeeMore from "../../components/UI/SeeMore";
-import useWindowSize from "../../hooks/useWindowSize";
+import useWindowSize from "../../core/hooks/useWindowSize";
 import DefaultLayout from "../../layouts/DefaultLayout";
 import MyMain from "../../components/MyMain";
-import styles from '../../styles/full-post-body.module.scss'
+import styles from '../../core/styles/full-post-body.module.scss'
 import Image from 'next/image'
 import Liked from "../../components/UI/Liked";
-import text from '../../components/tstText'
-import {useEffect} from "react";
+import {tstText} from "../../core/mock";
 
 
 export default function FullPost() {
@@ -47,7 +46,7 @@ export default function FullPost() {
                     <div className={styles.fullPost__wrp}>
 
                         <div className={styles.fullPost__content}>
-                            <div className={'sun-editor-editable'} dangerouslySetInnerHTML={{__html:text}}/>
+                            <div className={'sun-editor-editable'} dangerouslySetInnerHTML={{__html: tstText}}/>
 
                         </div>
 

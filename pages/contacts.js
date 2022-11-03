@@ -1,6 +1,6 @@
-import styles from '../styles/contacts.module.scss'
+import styles from '../core/styles/contacts.module.scss'
 import DefaultLayout from "../layouts/DefaultLayout";
-import { useRouter } from 'next/router'
+import {useRouter} from 'next/router'
 import MyMain from "../components/MyMain";
 
 export default function Contacts() {
