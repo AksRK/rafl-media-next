@@ -30,14 +30,10 @@ $header-nav-anim-time: 0.3s;
 
   &__img {
     max-width: 192px;
-
-
-    & svg {
-      transition: fill 3.3s ease-in-out;
-      -webkit-transition: fill 3.3s ease-in-out;
-      -moz-transition: fill 3.3s ease-in-out;
-      -o-transition: fill 3.3s ease-in-out;
-    }
+    transition: color 3.3s ease-in-out;
+    -webkit-transition: color 3.3s ease-in-out;
+    -moz-transition: color 3.3s ease-in-out;
+    -o-transition: color 3.3s ease-in-out;
   }
 
   &__text {

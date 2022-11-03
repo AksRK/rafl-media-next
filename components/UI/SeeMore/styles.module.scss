@@ -52,46 +52,10 @@
   }
 
   &__currentAuthor {
-    position: absolute;
-    left: 130px;
-    min-width: fit-content;
-    overflow: hidden;
+    user-select: none;
+    width: 126px;
+    margin-left: 8px;
     transition: opacity 0.5s ease-in-out;
-
-    display: flex;
-    gap: 0 10px;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 15px;
-      height: 100%;
-      background: linear-gradient(90deg, #000000 41.59%, rgba(245, 245, 247, 0) 93.56%);
-      z-index: 2;
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 66px;
-      width: 130px;
-      height: 20px;
-      background: linear-gradient(270deg, #000000 41.59%, rgba(245, 245, 247, 0) 93.56%);
-      z-index: 2;
-    }
-
-    & span {
-      display: inline-block;
-      position: relative;
-      //left: 0;
-      white-space: nowrap;
-
-      //animation: 10s see-more-text-animation infinite cubic-bezier(0.31, 0.3, 0.68, 0.67);
-      animation: 5s see-more-text-animation infinite linear;
-    }
   }
 
   &__linkWrp {

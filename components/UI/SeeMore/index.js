@@ -1,6 +1,7 @@
 import styles from './styles.module.scss'
 import {useState} from "react";
 import Link from 'next/link'
+import Marquee from "react-fast-marquee";
 
 function SeeMore({category, authorName, linksArray}) {
     const arrow = <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,10 +24,17 @@ function SeeMore({category, authorName, linksArray}) {
                         {arrow}
                     </div>
 
-                    <div style={seeMoreState?{opacity:'0'}:{}} className={styles.seeMore__currentAuthor}>
-                        <span>
-                            Ирина Подшибяина: на равных
-                        </span>
+                    <div className={styles.seeMore__currentAuthor}
+                        style={{
+                            opacity: seeMoreState ? 0 : 1
+                        }}
+                    >
+                        <Marquee gradient={false}>
+                            <div style={{marginRight: '15px'}}>Ирина Подшибяина: на равных</div>
+                        </Marquee>
+                        {/*<span>*/}
+                        {/*    Ирина Подшибяина: на равных*/}
+                        {/*</span>*/}
                     </div>
                 </div>
                 <div className={styles.seeMore__el+ ' ' + styles.seeMore__el_contentRight}>
