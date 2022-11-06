@@ -3,53 +3,15 @@ import {useState} from "react";
 import Link from 'next/link'
 import useWindowSize from "../../core/hooks/useWindowSize";
 import SocialLink from "../UI/SocialLink";
-import NavLink from "../UI/NavLink";
-import { useRouter } from 'next/router'
 import Logo from "../UI/Logo";
+import NavBar from "../NavBar";
 
-function Header() {
-    const {asPath} = useRouter()
+
+function Header({routes}) {
     const size = useWindowSize()
     const [burgerState, setBurgerState] = useState(false)
     const mobile = 1220
 
-    const headerNavBar = () => {
-        return (
-            <nav className={styles.headerNav}>
-                <NavLink
-                    href={'/posts'}
-                    myClassName={styles.headerNav__link}
-                    myActiveClassName={styles.headerNav__link_active}>
-                    <span>Тело Поста Тест</span>
-                </NavLink>
-                <NavLink
-                    href={'/'}
-                    myClassName={styles.headerNav__link}
-                    myActiveClassName={styles.headerNav__link_active}>
-                    <span>Медиа</span>
-                </NavLink>
-                <NavLink
-                    href={'/community'}
-                    myClassName={styles.headerNav__link}
-                    myActiveClassName={styles.headerNav__link_active}>
-                    <span>Комьюнити</span>
-                </NavLink>
-                <a className={styles.headerNav__link} href=""><span>Студия</span></a>
-                <NavLink
-                    href={'/about-project'}
-                    myClassName={styles.headerNav__link}
-                    myActiveClassName={styles.headerNav__link_active}>
-                    <span>О проекте</span>
-                </NavLink>
-                <NavLink
-                    href={'/contacts'}
-                    myClassName={styles.headerNav__link}
-                    myActiveClassName={styles.headerNav__link_active}>
-                    <span>Контакты</span>
-                </NavLink>
-            </nav>
-        )
-    }
     return (
         <header className={styles.header}>
             <div className={styles.header__logoWrp}>
@@ -75,7 +37,7 @@ function Header() {
                         <div style={burgerState?{top:'0'}:{top:'-530px'}} className={styles.burgerMenu}>
                             <div style={burgerState?{opacity:'100%',}:{}} className={styles.burgerMenu__content}>
                                 <div style={!burgerState?{opacity:'0'}:{}} className={styles.burgerMenu__navWrp}>
-                                    {headerNavBar()}
+                                    <NavBar routes={routes}/>
                                 </div>
 
 
@@ -89,7 +51,7 @@ function Header() {
                             </div>
                         </div>
                     </>
-                    :headerNavBar()
+                    : <NavBar routes={routes}/>
             }
 
         </header>

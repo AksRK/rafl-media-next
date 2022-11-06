@@ -53,107 +53,87 @@ function NewPost() {
 
     return (
         <AdminPanelLayout>
-            <h1>Новая статья</h1>
-
-            {/*<div className={styles.addImg}>*/}
-            {/*    <input*/}
-            {/*        type="file"*/}
-            {/*        accept="image/*"*/}
-            {/*        // name={'titleImg'}*/}
-            {/*        // id={'titleImg'}*/}
-            {/*        onChange={(event)=> imgUpload(event)}*/}
-            {/*    />*/}
-            {/*    <div className={styles.addImg__plus}>*/}
-            {/*        <Image src={plusImg} alt={'plus'}/>*/}
-            {/*    </div>*/}
-            {/*    {*/}
-            {/*        titleImg?*/}
-            {/*            <>*/}
-            {/*                <div className={styles.addImg__preview}>*/}
-            {/*                    <Image src={titleImg} alt={123} width={500} height={500}/>*/}
-            {/*                </div>*/}
-            {/*                <div onClick={()=> setTitleImg(null)} className={styles.addImg__plus + ' ' + styles.addImg__plus_del}>*/}
-            {/*                    <Image src={plusImg} alt={'plus'}/>*/}
-            {/*                </div>*/}
-            {/*            </>*/}
-            {/*            :''*/}
-            {/*    }*/}
-            {/*</div>*/}
-
-            <form onSubmit={handleSubmit(onSubmit)}>
-
-                {/*<Image src={tst} alt={123}/>*/}
-
-                <div className={styles.addImg}>
-                    <input
-                        type="file"
-                        accept="image/*"
-                        ref={imageRef}
-                        name={'titleImg'}
-                        id={'titleImg'}
-                        onChange={(event) => imgUpload(event)}
-                    />
-                    <div className={styles.addImg__plus}>
-                        <Image src={plusImg} alt={'plus'}/>
-                    </div>
-                    {/*<div className={styles.addImg__preview}>*/}
-                    {/*    /!*<Image src={previewTitleImg} alt={123} width={500} height={500}/>*!/*/}
-                    {/*</div>*/}
-                    {titleImg
-                        ? <>
-                            <div className={styles.addImg__preview}>
-                                <Image src={titleImg} alt={123} width={500} height={500}/>
-                            </div>
-                            <div onClick={() => {
-                                imageRef.current.value = ''
-                                setTitleImg(null)
-                            }}
-                                 className={styles.addImg__plus + ' ' + styles.addImg__plus_del}>
+            <div className="container-admin">
+                <h1>Новая статья</h1>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <div className={styles.newPostFormWrp}>
+                        <div className={styles.addImg}>
+                            <input
+                                type="file"
+                                accept="image/*"
+                                ref={imageRef}
+                                name={'titleImg'}
+                                id={'titleImg'}
+                                onChange={(event) => imgUpload(event)}
+                            />
+                            <div className={styles.addImg__plus}>
                                 <Image src={plusImg} alt={'plus'}/>
                             </div>
-                        </>
-                        : ''
-                    }
-                </div>
+                            {/*<div className={styles.addImg__preview}>*/}
+                            {/*    /!*<Image src={previewTitleImg} alt={123} width={500} height={500}/>*!/*/}
+                            {/*</div>*/}
+                            {titleImg
+                                ? <>
+                                    <div className={styles.addImg__preview}>
+                                        <Image src={titleImg} alt={123} width={500} height={500}/>
+                                    </div>
+                                    <div onClick={() => {
+                                        imageRef.current.value = ''
+                                        setTitleImg(null)
+                                    }}
+                                         className={styles.addImg__plus + ' ' + styles.addImg__plus_del}>
+                                        <Image src={plusImg} alt={'plus'}/>
+                                    </div>
+                                </>
+                                : ''
+                            }
+                        </div>
+                        <div style={{flexGrow: 1}}>
+                            <div className={styles.newPostForm__controller}>
+                                <label className={styles.newPostForm__label}
+                                       htmlFor={'title'}>
+                                    Заголовок статьи
+                                </label>
+                                <textarea
+                                    className={styles.newPostForm__textArea}
+                                    placeholder={'Заголовок статьи'}
+                                    name={'title'}
+                                    id={'title'}
+                                    {...register("title",
+                                        {required: true, minLength: 5, maxLength: 80})}
+                                />
+                            </div>
+                            <div className={styles.newPostForm__controller}>
+                                <label className={styles.newPostForm__label}
+                                       htmlFor={'description'}>
+                                    Описание
+                                </label>
+                                <textarea
+                                    className={styles.newPostForm__textArea}
+                                    style={{minHeight: '323px'}}
+                                    placeholder={'Описание статьи'}
+                                    name={'description'}
+                                    id={'description'}
+                                    {...register("description",
+                                        {required: true, minLength: 5, maxLength: 200})}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <br/>
+                    <div className={styles.newPostForm__editorWrp}>
+                        <label className={styles.newPostForm__label}>
+                            Тело поста
+                        </label>
+                        <br/>
+                        <br/>
+                        <Editor onChange={(data) => setPostBody(data)}/>
+                    </div>
 
-                <div className={styles.newPostForm__controller}>
-                    <label className={styles.newPostForm__label}
-                           htmlFor={'title'}>
-                        Заголовок статьи
-                    </label>
-                    <textarea
-                        className={styles.newPostForm__textArea}
-                        placeholder={'Заголовок статьи'}
-                        name={'title'}
-                        id={'title'}
-                        {...register("title",
-                        {required: true, minLength: 5, maxLength: 80})}
-                    />
-                </div>
 
-                <div className={styles.newPostForm__controller}>
-                    <label className={styles.newPostForm__label}
-                           htmlFor={'description'}>
-                        Описание
-                    </label>
-                    <textarea
-                        className={styles.newPostForm__textArea}
-                        style={{minHeight:'150px'}}
-                        placeholder={'Описание статьи'}
-                        name={'description'}
-                        id={'description'}
-                        {...register("description",
-                            {required: true, minLength: 5, maxLength: 80})}
-                    />
-                </div>
-
-                <div className={styles.newPostForm__editorWrp}>
-                    <Editor onChange={(data)=> setPostBody(data)}/>
-                </div>
-
-
-                <input type={'submit'} value={'Опубликовать'}/>
-            </form>
+                    <input className={'btn'} type={'submit'} value={'Опубликовать'}/>
+                </form>
+            </div>
         </AdminPanelLayout>
     )
 }

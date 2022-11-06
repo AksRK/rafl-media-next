@@ -1,14 +1,14 @@
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import {useRouter} from 'next/router'
 
 export default function NavLink({href, children, myClassName, myActiveClassName}) {
-    const {asPath} = useRouter()
+    const router = useRouter()
 
-    function tst() {
-        // if (href.includes(path[1]) ) {
-        //     return myActiveClassName
-        // }
-        if ('/'+asPath.replaceAll('/', ' ').split(' ')[1] === href) {
+    function checkActiveLink() {
+        if (href === router.asPath) {
+            return myActiveClassName
+        }
+        if ('/' + router.asPath.replaceAll('/', ' ').split(' ')[1] === href) {
             return myActiveClassName
         }
 
@@ -18,7 +18,7 @@ export default function NavLink({href, children, myClassName, myActiveClassName}
     return (
         <Link
             href={href}
-            className={myClassName + ' ' + tst()}
+            className={myClassName + ' ' + checkActiveLink()}
         >
             {children}
         </Link>

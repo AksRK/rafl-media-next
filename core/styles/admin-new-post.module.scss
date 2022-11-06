@@ -1,8 +1,8 @@
 .newPostForm {
 
   &__controller {
-    max-width: 673px;
-    margin: 20px 0;
+    //max-width: 673px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px 0;
@@ -41,13 +41,14 @@
   }
 
   &__editorWrp {
-    max-width: 900px;
+    //max-width: 900px;
   }
+
 }
 
 .addImg {
   position: relative;
-  max-width: 380px;
+  width: 380px;
   height: 513px;
   border: 1px solid #D9D9D9;
   border-radius: 13px;
@@ -119,5 +120,20 @@
 
 .addImg:hover  .addImg__plus_del {
   background-color: #000000;
+}
+
+.newPostFormWrp {
+  display: flex;
+  gap: 30px;
+}
+
+@media (max-width: 880px) {
+  .addImg {
+    width: 100%;
+  }
+
+  .newPostFormWrp {
+    flex-direction: column;
+  }
 }
 
