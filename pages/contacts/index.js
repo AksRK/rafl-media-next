@@ -1,13 +1,13 @@
-import styles from '../core/styles/contacts.module.scss'
-import DefaultLayout from "../layouts/DefaultLayout";
+import styles from './index.module.scss'
+import DefaultLayout from "../../layouts/DefaultLayout";
 import {useRouter} from 'next/router'
-import MyMain from "../components/MyMain";
+import MyMain from "../../components/MyMain";
 
 export default function Contacts() {
     const {asPath} = useRouter()
 
     return (
-        <DefaultLayout activePage={asPath}>
+        <DefaultLayout activePage={asPath} bannerState={false}>
             <MyMain bigPadding={true}>
                 <div className={styles.contacts}>
                     <h2 className={'page-title'}>Контакты</h2>

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "../Header/styles.module.scss";
+import styles from "../Header/index.module.scss";
 import NavLink from "../UI/NavLink";
 
 const NavBar = ({routes}) => {

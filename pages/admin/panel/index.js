@@ -12,7 +12,7 @@ function AdminPanel() {
     useEffect(() => {
         fetch('http://localhost:4444/posts')
             .then(res => res.json())
-            .then(data => setDataSource(data.map(p => ({...p, createdAt: formatRuDate(p.createdAt)}))))
+            .then(data => setDataSource(data.docs.map(p => ({...p, createdAt: formatRuDate(p.createdAt)}))))
     }, [])
 
     const items = [

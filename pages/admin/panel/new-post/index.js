@@ -1,9 +1,9 @@
-import AdminPanelLayout from "../../../layouts/AdminPanelLayout";
+import AdminPanelLayout from "../../../../layouts/AdminPanelLayout";
 import {useForm} from 'react-hook-form';
-import styles from "../../../core/styles/admin-new-post.module.scss";
+import styles from "./index.module.scss";
 import Image from 'next/image'
-import plusImg from '../../../public/plus.png'
-import Editor from "../../../components/Editor";
+import plusImg from '../../../../public/plus.png'
+import Editor from "../../../../components/Editor";
 import {useRef, useState} from "react";
 import axios from "axios";
 

@@ -1,13 +1,13 @@
-import styles from '../../core/styles/creator-info-page.module.scss'
-import HomeLayout from "../../layouts/HomeLayout";
-import MyMain from "../../components/MyMain";
-import DefaultLayout from "../../layouts/DefaultLayout";
-import tstImg from "../../public/tstImg.jpg";
-import SocialLink from "../../components/UI/SocialLink";
+import styles from './index.module.scss'
+import HomeLayout from "../../../layouts/HomeLayout";
+import MyMain from "../../../components/MyMain";
+import DefaultLayout from "../../../layouts/DefaultLayout";
+import tstImg from "../../../public/tstImg.jpg";
+import SocialLink from "../../../components/UI/SocialLink";
 import Image from 'next/image'
 import Link from 'next/link'
-import useWindowSize from "../../core/hooks/useWindowSize";
-import CardsList from "../../components/CardsList";
+import useWindowSize from "../../../core/hooks/useWindowSize";
+import CardsList from "../../../components/CardsList";
 
 export default function CreatorPage() {
     const closeImg = <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

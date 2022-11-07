@@ -1,4 +1,4 @@
-import styles from './styles.module.scss'
+import styles from './index.module.scss'
 import useWindowSize from "../../core/hooks/useWindowSize";
 import Link from 'next/link'
 import Image from 'next/image'

@@ -1,4 +1,4 @@
-import style from './style.module.scss'
+import style from './index.module.scss'
 import footerLogo from '../../public/footer-logo.svg'
 import Link from "next/link";
 import Image from 'next/image'

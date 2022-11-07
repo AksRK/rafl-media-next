@@ -8,7 +8,7 @@ export default function AboutProject() {
     const {asPath} = useRouter()
 
     return (
-        <DefaultLayout activePage={asPath}>
+        <DefaultLayout activePage={asPath} bannerState={false}>
             <MyMain bigPadding={true}>
                 <div className={styles.aboutProject}>
                     <h2 style={{maxWidth:'700px'}} className={'page-title'}>

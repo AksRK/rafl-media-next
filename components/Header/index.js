@@ -1,4 +1,4 @@
-import styles from './styles.module.scss'
+import styles from './index.module.scss'
 import {useState} from "react";
 import Link from 'next/link'
 import useWindowSize from "../../core/hooks/useWindowSize";

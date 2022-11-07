@@ -13,6 +13,10 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+
+  &:hover {
+    color: #000000;
+  }
 }
 
 * {
@@ -22,6 +26,7 @@ a {
 .container {
   width: 1633px;
   margin: 0 auto;
+  padding-bottom: 1px;
 }
 
 

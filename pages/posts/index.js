@@ -6,7 +6,7 @@ import SeeMore from "../../components/UI/SeeMore";
 import useWindowSize from "../../core/hooks/useWindowSize";
 import DefaultLayout from "../../layouts/DefaultLayout";
 import MyMain from "../../components/MyMain";
-import styles from '../../core/styles/full-post-body.module.scss'
+import styles from './index.module.scss'
 import Image from 'next/image'
 import Liked from "../../components/UI/Liked";
 import {tstText} from "../../core/mock";
@@ -16,15 +16,8 @@ export default function FullPost() {
     const size = useWindowSize()
     const mobile = 479
 
-    // useEffect(() => {
-    //     // executeScroll()
-    //     window.scrollTo(0, 0);
-    //     const cont = document.querySelector('.sun-editor-editable')
-    //     cont.insertAdjacentHTML('afterbegin', text);
-    // }, [])
-
     return (
-        <DefaultLayout>
+        <DefaultLayout bannerState={false}>
             <MyMain post={true}>
                 <section className={styles.fullPost}>
                     <SeeMore />

@@ -1,4 +1,4 @@
-import styles from './styles.module.scss'
+import styles from './index.module.scss'
 import Card from "../Card";
 import tstImg from "../../public/tstImg.jpg";
 

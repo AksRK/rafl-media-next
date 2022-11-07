@@ -8,7 +8,6 @@
   cursor: pointer;
   border: 1px solid rgba(236, 236, 236, 0);
   transition: background-color 0.4s ease-in-out;
-  animation: 0.5s card-loaded both ;
 
   &_creator {
     height: 613px;
@@ -25,6 +24,7 @@
   }
 
   &__img {
+    object-fit: cover;
     position: relative;
     max-width: 380px;
     height: 513px;
@@ -35,8 +35,7 @@
     border-radius: 23px;
 
     & img {
-      //width: 128%;
-      transition: width 0.4s ease-in-out;
+      transition: transform 0.2s ease-in-out;
     }
 
     &_creator {
@@ -112,7 +111,7 @@
 }
 
 .card:hover .card__img img {
-  //width: 125%;
+  transform: scale(1.03);
 }
 
 .card:hover .card__title {

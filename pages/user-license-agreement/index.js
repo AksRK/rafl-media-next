@@ -1,14 +1,14 @@
-import styles from '../core/styles/user-license-agreement.module.scss'
-import DefaultLayout from "../layouts/DefaultLayout";
+import styles from './index.module.scss'
+import DefaultLayout from "../../layouts/DefaultLayout";
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import MyMain from "../components/MyMain";
+import MyMain from "../../components/MyMain";
 
 export default function UserLicenseAgreement() {
     const {asPath} = useRouter()
 
     return (
-        <DefaultLayout activePage={asPath}>
+        <DefaultLayout activePage={asPath} bannerState={false}>
             <MyMain bigPadding={true}>
                 <div className={styles.license}>
                     <h3 className={styles.license__subtitle}>

@@ -19,7 +19,8 @@
     "react-hook-form": "^7.38.0",
     "sass": "^1.55.0",
     "suneditor": "^2.44.3",
-    "suneditor-react": "^3.4.1"
+    "suneditor-react": "^3.4.1",
+    "swiper": "^8.4.4"
   },
   "devDependencies": {
     "eslint": "8.26.0",
