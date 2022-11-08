@@ -19,11 +19,13 @@
   }
 
   &__editPage {
+    position: relative;
     padding: 20px;
     flex: 0 0 75%;
     min-height: 80vh;
     background-color: #ffffff;
     border-radius: 22px;
+    z-index: 1;
   }
 }
 

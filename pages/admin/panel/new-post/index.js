@@ -4,33 +4,33 @@ import styles from "./index.module.scss";
 import Image from 'next/image'
 import plusImg from '../../../../public/plus.png'
 import Editor from "../../../../components/Editor";
-import {useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import axios from "axios";
+import PostPreview from "../../../../components/PostPreview";
 
 
 function NewPost() {
+    const [fullPost, setFullPost] = useState(null)
     const [postBody, setPostBody] = useState('')
-    const [previewTitleImg, setPreviewTitleImg] = useState(null)
     const imageRef = useRef()
-    const [titleImg, setTitleImg] = useState('')
+    const [titleImage, setTitleImage] = useState('')
+    const [previewState, setPreviewState] = useState(false)
     const { register, handleSubmit, formState: { errors } } = useForm({
         defaultValues: {
             title: '',
             description:'',
-            titleImg: titleImg,
+            titleImag: titleImage,
             post:''
         }
     });
 
-    // const imgUpload = (event) => {
-    //     console.log(event)
-    //     const Data = new FormData()
-    //     Data.append('image', event.target.files)
-    //     console.log(Data.image)
-    // }
+    useEffect(() => {
+        scrollTo(top)
+    }, [previewState])
 
     const onSubmit = (data) => {
-        console.log({...data, post: postBody, titleImg: titleImg})
+        console.log({...data, post: postBody, titleImg: titleImage})
+        setFullPost({...data, post: postBody, titleImg: titleImage})
     }
 
     const imgUpload = (event) => {
@@ -45,7 +45,7 @@ function NewPost() {
                     'Content-Type': 'multipart/form-data'
                 }
             }).then((response) => {
-            setTitleImg(response.data.fullUrl)
+            setTitleImage(response.data.fullUrl)
         }).catch((error) => {
             console.log(error)
         })
@@ -69,17 +69,14 @@ function NewPost() {
                             <div className={styles.addImg__plus}>
                                 <Image src={plusImg} alt={'plus'}/>
                             </div>
-                            {/*<div className={styles.addImg__preview}>*/}
-                            {/*    /!*<Image src={previewTitleImg} alt={123} width={500} height={500}/>*!/*/}
-                            {/*</div>*/}
-                            {titleImg
+                            {titleImage
                                 ? <>
                                     <div className={styles.addImg__preview}>
-                                        <Image src={titleImg} alt={123} width={500} height={500}/>
+                                        <Image src={titleImage} alt={123} width={500} height={500}/>
                                     </div>
                                     <div onClick={() => {
                                         imageRef.current.value = ''
-                                        setTitleImg(null)
+                                        setTitleImage(null)
                                     }}
                                          className={styles.addImg__plus + ' ' + styles.addImg__plus_del}>
                                         <Image src={plusImg} alt={'plus'}/>
@@ -121,7 +118,7 @@ function NewPost() {
                         </div>
                     </div>
                     <br/>
-                    <div className={styles.newPostForm__editorWrp}>
+                    <div>
                         <label className={styles.newPostForm__label}>
                             Тело поста
                         </label>
@@ -130,9 +127,20 @@ function NewPost() {
                         <Editor onChange={(data) => setPostBody(data)}/>
                     </div>
 
-
-                    <input className={'btn'} type={'submit'} value={'Опубликовать'}/>
+                    <div style={previewState?{position:'fixed'}:{}} className={styles.newPostForm__wrpBtn}>
+                        <input className={'btn'} type={'submit'} value={'Опубликовать'}/>
+                        <div onClick={()=>setPreviewState(!previewState)}
+                             className={'btn'}>
+                            {
+                                previewState?'Редактировать':'Предпросмотр'
+                            }
+                        </div>
+                    </div>
+                    <div style={{height:'100px'}}></div>
                 </form>
+                {
+                    previewState?<PostPreview data={fullPost}/>:''
+                }
             </div>
         </AdminPanelLayout>
     )

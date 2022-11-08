@@ -20,10 +20,12 @@ export default function FullPost() {
         <DefaultLayout bannerState={false}>
             <MyMain post={true}>
                 <section className={styles.fullPost}>
-                    <SeeMore />
+                    <div className={styles.fullPost__moreWrp}>
+                        <SeeMore />
+                    </div>
                     <span className={styles.fullPost__date}>
-                1 октября 2022 г.
-            </span>
+                        1 октября 2022 г.
+                    </span>
                     <div className={styles.fullPost__head}>
                         <h1 className={'page-title page-title--full-post'}>Ирина Подшибякина: на равных</h1>
                         <span className={styles.fullPost__description}>
@@ -39,7 +41,7 @@ export default function FullPost() {
                     <div className={styles.fullPost__wrp}>
 
                         <div className={styles.fullPost__content}>
-                            <div className={'sun-editor-editable'} dangerouslySetInnerHTML={{__html: tstText}}/>
+                            <div className={'sun-editor-editable sun-editor-editable--content'} dangerouslySetInnerHTML={{__html: tstText}}/>
 
                         </div>
 

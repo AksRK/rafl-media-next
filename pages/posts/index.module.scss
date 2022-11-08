@@ -2,11 +2,16 @@
   max-width: 1226px;
   background: #FAFAFA;
   border-radius: 36px;
-  padding: 48px 78px 42px 78px;
+  padding: 26px 78px 42px 78px;
+
+  &__moreWrp {
+    width: fit-content;
+    height: 45px;
+  }
 
   &__date {
     display: block;
-    margin: 80px 0 20px 0;
+    margin: 20px 0 15px 0;
     font-weight: 500;
     font-size: 15px;
     line-height: 18px;
@@ -32,7 +37,8 @@
     height: fit-content;
     max-width: 976px;
     max-height: 647px;
-    //min-height: 450px;
+    min-width: 300px;
+    min-height: 300px;
     border-radius: 23px;
     overflow: hidden;
     display: flex;
@@ -40,6 +46,7 @@
     justify-content: center;
 
     & img {
+      object-fit: cover;
       max-width: 100%;
       max-height: 100%;
     }
@@ -215,7 +222,11 @@
 @media (max-width: 479px) {
   .fullPost {
     width: 100%;
+    padding: 0 0 0 0;
 
+    &__date {
+      margin: 14px 0 10px 0;
+    }
 
     &__head {
       gap: 25px;

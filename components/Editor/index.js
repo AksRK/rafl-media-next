@@ -8,18 +8,18 @@ export default function Editor({ name, onChange, props, contTst }) {
 
     const options = {
         height: 750,
-        // maxWidth: 900,
         "formats": [
             "p",
-            "h2",
             "h3",
             "blockquote",
             "pre",
         ],
         "videoResizing": false,
         "videoFileInput": false,
-        // toolbarWidth:'balloon',
-        // mode:'inline',
+        "imageResizing": false,
+        "imageHeightShow": false,
+        "imageAlignShow": false,
+
         buttonList: [
             [
                 'undo',
@@ -28,27 +28,21 @@ export default function Editor({ name, onChange, props, contTst }) {
                 'bold',
                 'underline',
                 'italic',
-
                 'blockquote',
                 'strike',
                 'fontColor',
                 'hiliteColor',
                 'removeFormat',
-
                 'outdent',
                 'indent',
                 'align',
-                // 'horizontalRule',
                 'list',
-                // 'table',
                 'link',
                 'image',
-
                 "video",
-
                 'showBlocks',
                 'codeView',
-                'preview'
+                // 'preview'
             ]
         ],
     }
@@ -57,11 +51,11 @@ export default function Editor({ name, onChange, props, contTst }) {
         <div>
             <SunEditor
                 {...props}
-                placeholder="Начните создавать статью)"
+                placeholder={'Начните создавать статью)'}
                 appendContents={contTst}
                 name={name}
-                lang="ru"
-                setDefaultStyle="font-family: Inter;"
+                lang={'ru'}
+                setDefaultStyle={'font-family: Inter;'}
                 setOptions={options}
                 onChange={onChange}
             />

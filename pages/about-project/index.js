@@ -3,6 +3,9 @@ import {useRouter} from 'next/router'
 import MyMain from "../../components/MyMain";
 import SocialLink from "../../components/UI/SocialLink";
 import DefaultLayout from "../../layouts/DefaultLayout";
+import Image from "next/image";
+import selenovIgor from '../../public/selenov-igor.jpg'
+import zverevIgor from '../../public/zverev-igor.jpeg'
 
 export default function AboutProject() {
     const {asPath} = useRouter()
@@ -38,7 +41,7 @@ export default function AboutProject() {
                     <div className={styles.aboutProjectCards}>
                         <div className={styles.aboutProjectCards__item}>
                             <div className={styles.aboutProjectCards__img}>
-                                {/*<img src="src/pages/Client/AboutProject/AboutProject" alt=""/>*/}
+                                <Image src={selenovIgor} alt={'Игорь Селенов'}/>
                             </div>
                             <h3 className={styles.aboutProjectCards__title}>
                                 {'Игорь \n Селенов'}
@@ -50,7 +53,7 @@ export default function AboutProject() {
                         </div>
                         <div className={styles.aboutProjectCards__item}>
                             <div className={styles.aboutProjectCards__img}>
-                                {/*<img src="src/pages/Client/AboutProject/AboutProject" alt=""/>*/}
+                                <Image src={zverevIgor} alt={'Игорь Зверев'}/>
                             </div>
                             <h3 className={styles.aboutProjectCards__title}>
                                 {'Игорь \n Зверев'}
